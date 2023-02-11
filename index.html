@@ -26,7 +26,6 @@
             <input type="text" id="name" placeholder="Nama Lengkap" required>
             <input type="text" id="rt" placeholder="RT (007-015)" required>
             <input type="number" id="phone" placeholder="No Tlp / Whatsapp" required>
-            <input type="email" id="phone" placeholder="Email" required>
             <textarea id="keluhan" rows="5" placeholder="Ada keluhan?"></textarea>
             <button type="submit">Kirim</button>
             <center>
@@ -61,15 +60,17 @@
             From : "saktiiiii666@gmail.com",
 
             Subject : "Form Pengaduan dari : " + document.getElementById("name").value,
-            Body : "<b> Nama : </b>" + document.getElementById("name").value +
+            Body : 
+                    "Tanggal Pengaduan : </b>" + date +
+                    "<br><b> Jam Pengaduan : </b>" + time +
+                    "<br>======================================" +
+                    "<br><b> Nama : </b>" + document.getElementById("name").value +
                     "<br><b> RT : </b>" + document.getElementById("rt").value +
                     "<br><b> No Tlp : </b>" + document.getElementById("phone").value +
-                    "<br><b> Tanggal Pengaduan : </b>" + date +
-                    "<br><b> Jam Pengaduan : </b>" + time +
                     "<br><b> Keluhan : </b>" + document.getElementById("keluhan").value
 
             }).then(
-            message => alert(message)
+            message => alert("Baik, saya terima laporan anda!")
             );
             
 
