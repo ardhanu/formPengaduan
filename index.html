@@ -11,17 +11,44 @@
 
     <div class="container">
         <form onsubmit="sendEmail(); reset(); return false;">
-            <h3>GET IN TOUCH</h3>
+ 
+            <center>
+            <table>
+                <tr>
+                    <td>
+                        <img src="logo.png">
+                    </td>
+
+                    <td>
+                        <h3>FORM PENGADUAN WARGA RW.16</h3>
+                    </td>
+                </tr>
+            </table>
+            </center>
+
             <input type="text" id="name" placeholder="Nama" required>
             <input type="text" id="rt" placeholder="RT" required>
-            <input type="number" id="phone" placeholder="No Tlp" required>
-            <textarea id="keluhan" rows="4" placeholder="Apa keluhanmu?"></textarea>
+            <input type="number" id="phone" placeholder="No Tlp / Whatsapp" required>
+            <textarea id="keluhan" rows="5" placeholder="Apa keluhanmu?"></textarea>
             <button type="submit">Kirim</button>
+            <center>
+            <br>
+            <p style="font-size: 12px;">Jl. Tenaga Listrik 1, Kec. Tanah Abang, Kel. Kebon Melati.</p>
+            <br>
+            <p style="font-size: 10px;">
+                &copy; 2023. <b> Sakti Ardhanu.</b> All Rights Reserved.
+            </p>
+        </center>
         </form>
+
+        
     </div>
 
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script>
+
+        var date = new Date().toLocaleDateString();
+        var time = new Date().toLocaleTimeString();
 
         function sendEmail(){
 
@@ -32,14 +59,18 @@
             Password : "80E76A0D7277C8FE0C105B47146E3404637B",
             To : 'saktiardhanu2nd@gmail.com',
             From : "saktiiiii666@gmail.com",
-            Subject : "Form Pengaduan",
-            Body : "Nama : " + document.getElementById("name").value +
-                    "<br> RT : " + document.getElementById("rt").value +
-                    "<br> No Tlp : " + document.getElementById("phone").value +
-                    "<br> Keluhan : " + document.getElementById("keluhan").value
+            Subject : "Form Pengaduan dari : " + document.getElementById("name").value,
+            Body : "<b> Nama : </b>" + document.getElementById("name").value +
+                    "<br><b> RT : </b>" + document.getElementById("rt").value +
+                    "<br><b> No Tlp : </b>" + document.getElementById("phone").value +
+                    "<br><b> Tanggal Pengaduan : </b>" + date +
+                    "<br><b> Jam Pengaduan : </b>" + time +
+                    "<br><b> Keluhan : </b>" + document.getElementById("keluhan").value
+
             }).then(
             message => alert(message)
             );
+            
 
         }
     </script>
