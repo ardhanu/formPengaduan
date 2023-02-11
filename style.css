@@ -5,6 +5,7 @@
     font-family: 'poppins', sans-serif;
 }
 
+
 .container{
     width: 100%;
     height: 100vh;
@@ -14,6 +15,10 @@
     justify-content: center;
     filter: blur(50);
 }
+
+.hide{
+    visibility: hidden;
+ }
 
 form{
     background: white;
@@ -63,3 +68,4 @@ img{
 textarea {
     resize: none;
  }
+

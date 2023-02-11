@@ -26,8 +26,8 @@
             </table>
             </center>
 
-            <input type="text" id="name" placeholder="Nama" required>
-            <input type="text" id="rt" placeholder="RT" required>
+            <input type="text" id="name" placeholder="Nama Lengkap" required>
+            <input type="text" id="rt" placeholder="RT (007-015)" required>
             <input type="number" id="phone" placeholder="No Tlp / Whatsapp" required>
             <textarea id="keluhan" rows="5" placeholder="Apa keluhanmu?"></textarea>
             <button type="submit">Kirim</button>
@@ -44,6 +44,7 @@
         
     </div>
 
+    <div class="hide">
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script>
 
@@ -57,8 +58,9 @@
             Port : "2525",
             Username : "saktiardhanu2nd@gmail.com",
             Password : "80E76A0D7277C8FE0C105B47146E3404637B",
-            To : 'saktiardhanu2nd@gmail.com',
+            To : 'erwe16report@gmail.com',
             From : "saktiiiii666@gmail.com",
+
             Subject : "Form Pengaduan dari : " + document.getElementById("name").value,
             Body : "<b> Nama : </b>" + document.getElementById("name").value +
                     "<br><b> RT : </b>" + document.getElementById("rt").value +
@@ -74,6 +76,7 @@
 
         }
     </script>
+    </div>
 
 </body>
 </html>
