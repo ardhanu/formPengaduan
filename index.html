@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pengaduan Warga</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <form onsubmit="sendEmail(); reset(); return false;">
+            <h3>GET IN TOUCH</h3>
+            <input type="text" id="name" placeholder="Nama" required>
+            <input type="text" id="rt" placeholder="RT" required>
+            <input type="number" id="phone" placeholder="No Tlp" required>
+            <textarea id="keluhan" rows="4" placeholder="Apa keluhanmu?"></textarea>
+            <button type="submit">Kirim</button>
+        </form>
+    </div>
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+
+        function sendEmail(){
+
+            Email.send({
+            Host : "smtp.elasticemail.com",
+            Port : "2525",
+            Username : "saktiardhanu2nd@gmail.com",
+            Password : "80E76A0D7277C8FE0C105B47146E3404637B",
+            To : 'saktiardhanu2nd@gmail.com',
+            From : "saktiiiii666@gmail.com",
+            Subject : "Form Pengaduan",
+            Body : "Nama : " + document.getElementById("name").value +
+                    "<br> RT : " + document.getElementById("rt").value +
+                    "<br> No Tlp : " + document.getElementById("phone").value +
+                    "<br> Keluhan : " + document.getElementById("keluhan").value
+            }).then(
+            message => alert(message)
+            );
+
+        }
+    </script>
+
+</body>
+</html>
